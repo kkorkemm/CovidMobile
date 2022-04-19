@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.SettingsPage"
+             xmlns:control="clr-namespace:CovidMobile.UserControls" xmlns:viewmodels="clr-namespace:CovidMobile.ViewModels" x:DataType="viewmodels:SettingsViewModel"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- logo and user's name -->
+            <control:LogoNameControl
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <StackLayout Grid.Row="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Spacing="18">
+
+                <Button x:Name="BtnQuestion"
+                        Text="Заполнить анкету"
+                        Style="{StaticResource AquamarineButton}"/>
+
+                <Button x:Name="BtnTheme"
+                        Text="Тема: светлая"
+                        Style="{StaticResource BabyBlueButton}"
+                        Command="{Binding ChangeThemeCommand}"/>
+
+                <Button x:Name="BtnLang"
+                        Text="Язык: русский"
+                        Style="{StaticResource BabyBlueButton}"/>
+
+                <Button x:Name="BtnExit"
+                        Text="Выход"
+                        Style="{StaticResource SalmonButton}"/>
+
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

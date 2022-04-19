@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.ComponentPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="{Binding BackColor}"
+                   CornerRadius="20"
+                   Margin="0, -30, 0, 0">
+
+                <StackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center">
+
+                    <Label Text="{Binding ComponentType}"
+                           FontSize="48"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Спутник V"
+                           TextColor="White"
+                           FontSize="18"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="{Binding Status}"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+
+            </Frame>
+
+            <StackLayout Grid.Row="1"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
+
+                <Frame x:Name="FrameVacPoint"
+                       BackgroundColor="{StaticResource BabyBlue}"
+                       CornerRadius="10"
+                       WidthRequest="275"
+                       Padding="20">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout VerticalOptions="Center">
+
+                            <Label Text="Место сдачи"/>
+                            <Label Text="{Binding VaccinationPointName}"
+                                   FontAttributes="Bold"/>
+
+                        </StackLayout>
+
+                        <Image Grid.Column="1"
+                               Source="next_icon.png"
+                               WidthRequest="40"
+                               HeightRequest="40"/>
+
+                    </Grid>
+                </Frame>
+
+                <StackLayout Margin="10">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Врач:"/>
+                        <Label Text="{Binding DoctorName}"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Дата получения:"/>
+                        <Label Text="{Binding Date, StringFormat='{0:dd.MM.yyyy}'}"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+
+
+            <Button x:Name="BtnGetPDF"
+                    Grid.Row="2"
+                    Style="{StaticResource AquamarineButton}"
+                    Text="Получить справку в PDF"
+                    Margin="30, 0, 30, 20"/>
+
+            <Button x:Name="BtnEdit"
+                    Grid.Row="2"
+                    Style="{StaticResource AquamarineButton}"
+                    Text="Редактировать"
+                    Margin="30, 0, 30, 20"/>
+            
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

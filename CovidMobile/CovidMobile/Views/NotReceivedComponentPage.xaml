@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.NotReceivedComponentPage"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="{StaticResource Blue}"
+                   CornerRadius="20"
+                   Margin="0, -30, 0, 0"
+                   Opacity="0.6">
+
+                <StackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Spacing="15">
+
+                    <Label x:Name="TextComponent"
+                           FontSize="48"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Спутник V"
+                           TextColor="White"
+                           FontSize="18"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="Не получено"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+                
+            </Frame>
+
+            <Button x:Name="BtnCreateAppointment"
+                    Text="Запись на вакцинацию"
+                    Style="{StaticResource AquamarineButton}"
+                    Margin="30"
+                    Grid.Row="1"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

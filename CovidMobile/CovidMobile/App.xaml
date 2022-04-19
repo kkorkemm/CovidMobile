@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.App">
+    
+    <!-- GLOBAL STYLES -->
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <!-- COLORS -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="BabyBlue">#e7f2f8</Color>
+            <Color x:Key="Aquamarine">#74bdcb</Color>
+            <Color x:Key="Salmon">#ffa384</Color>
+            <Color x:Key="Freesia">#efe7bc</Color>
+            <Color x:Key="Blue">#74BDCB</Color>
+
+            <!-- LIGHT THEME COLORS -->
+            <Color x:Key="LightText">#3e3e3e</Color>
+            <Color x:Key="LightBackgroud">#fff</Color>
+
+            <!-- DARK THEME COLORS -->
+            <Color x:Key="DarkText">#e0e0e0</Color>
+            <Color x:Key="DarkBackground">#222</Color>
+
+
+            <!-- BUTTON STYLES -->
+            <Style TargetType="Button" x:Key="BaseButton">
+                <Setter Property="WidthRequest" Value="300"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+
+            <Style TargetType="Button" 
+                   x:Key="AquamarineButton" 
+                   BasedOn="{StaticResource BaseButton}">
+                
+                <Setter Property="BackgroundColor" Value="{StaticResource Aquamarine}"/>
+                <Setter Property="TextColor" Value="White"/>
+                
+            </Style>
+
+            <Style TargetType="Button" 
+                   x:Key="BabyBlueButton" 
+                   BasedOn="{StaticResource BaseButton}">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource BabyBlue}"/>
+                <Setter Property="TextColor" Value="Gray"/>
+
+            </Style>
+
+            <Style TargetType="Button" 
+                   x:Key="SalmonButton" 
+                   BasedOn="{StaticResource BaseButton}">
+
+                <Setter Property="BackgroundColor" Value="{StaticResource Salmon}"/>
+                <Setter Property="TextColor" Value="White"/>
+
+            </Style>
+
+
+            <Style TargetType="Frame" x:Key="ComponentButton">
+                <Setter Property="WidthRequest" Value="285"/>
+                <Setter Property="HeightRequest" Value="70"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                
+                
+                
+            </Style>
+
+
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

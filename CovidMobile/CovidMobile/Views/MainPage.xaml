@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:control="clr-namespace:CovidMobile.UserControls"
+             x:Class="CovidMobile.Views.MainPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- logo and user's name -->
+                <control:LogoNameControl
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <StackLayout Grid.Row="1"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Spacing="18">
+
+                <Frame x:Name="FirstFrame"
+                       Padding="10"
+                       CornerRadius="10"
+                       WidthRequest="285"
+                       HeightRequest="70"
+                       BackgroundColor="{Binding BackColor}"
+                       >
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Margin="10">
+                            <Label Text="I компонент"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   TextColor="{Binding ForeColor}"/>
+                            <Label Text="{Binding Status}"
+                                   x:Name="TextStatusFirst"
+                                   TextColor="{Binding ForeColor}"
+                                   FontSize="14"/>
+                        </StackLayout>
+
+                        <Image Source="next_icon_white.png"
+                               Grid.Column="1"
+                               WidthRequest="40"
+                               HeightRequest="40"
+                               VerticalOptions="Center"
+                               x:Name="NextIconFirst"/>
+
+                    </Grid>
+                </Frame>
+
+                <Frame x:Name="SecondFrame"
+                       Padding="10"
+                       CornerRadius="10"
+                       WidthRequest="285"
+                       HeightRequest="70"
+                       BackgroundColor="{Binding BackColor}">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Margin="10">
+                            <Label Text="II компонент"
+                                   FontAttributes="Bold"
+                                   FontSize="18"
+                                   TextColor="{Binding ForeColor}"/>
+                            <Label Text="{Binding Status}"
+                                   TextColor="{Binding ForeColor}"
+                                   x:Name="TextStatusSecond"
+                                   FontSize="14"/>
+                        </StackLayout>
+
+                        <Image Source="next_icon_white.png"
+                               Grid.Column="1"
+                               WidthRequest="40"
+                               HeightRequest="40"
+                               VerticalOptions="Center"
+                               x:Name="NextIconSecond"/>
+
+                    </Grid>
+                </Frame>
+
+            </StackLayout>
+
+            <Button x:Name="BtnQuestionnare"
+                    Grid.Row="2"
+                    Style="{StaticResource AquamarineButton}"
+                    Text="Заполнить анкету"
+                    Margin="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

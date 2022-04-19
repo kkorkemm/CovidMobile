@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:CovidMobile.Views"
+       Title="CovidMobile"
+       x:Class="CovidMobile.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#F9F9F9" />
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Icon="mainpage_icon.png" Route="AboutPage" ContentTemplate="{DataTemplate local:LoginPage}" 
+                      Title="Главная"
+                      Shell.TabBarTitleColor="#74BDCB"/>
+        <ShellContent Icon="map_icon.png" ContentTemplate="{DataTemplate local:VacPointsListPage}" 
+                      Title="Пункты вакцинации"
+                      Shell.TabBarTitleColor="#FFA384"/>
+        <ShellContent Icon="settings_icon.png" ContentTemplate="{DataTemplate local:SettingsPage}" 
+                      Title="Настройки"
+                      Shell.TabBarTitleColor="#EFE7BC"/>
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+
+</Shell>

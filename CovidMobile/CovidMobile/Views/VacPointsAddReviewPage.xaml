@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.VacPointsAddReviewPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="{StaticResource Blue}"
+                   Opacity="0.5"
+                   CornerRadius="20"
+                   Margin="0, -30, 0, 0">
+
+                <Grid>
+
+                    <!-- затемненное изображение??? -->
+                    <Image Source="{Binding Photo}"
+                           Opacity="0.5"
+                           />
+
+                    <Label Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       FontSize="30"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       VerticalOptions="End"
+                       Margin="10"
+                           TextColor="White"/>
+
+                </Grid>
+
+            </Frame>
+
+            <StackLayout Grid.Row="1"
+                         Margin="20"
+                         Spacing="10">
+
+                <StackLayout>
+                    <Label Text="Ваша оценка: "/>
+                    <StackLayout Orientation="Horizontal">
+
+                    </StackLayout>
+                </StackLayout>
+
+                <Editor Placeholder="Введите текст отзыва здесь"
+                        HeightRequest="100"
+                        x:Name="TextReviewText"/>
+
+            </StackLayout>
+
+            <Button x:Name="BtnPostReview"
+                    Text="Отправить отзыв"
+                    Style="{StaticResource AquamarineButton}"
+                    HorizontalOptions="Center"
+                    Margin="20"
+                    Grid.Row="2"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.VacPointsListPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Entry Placeholder="Введите название или адрес пункта"
+                   x:Name="TextSearch"
+                   Margin="20"
+                   TextChanged="TextSearch_TextChanged"/>
+
+            <ListView Grid.Row="1"
+                      x:Name="ListVacPoints"
+                      HasUnevenRows="True"
+                      ItemSelected="ListVacPoints_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="40, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image VerticalOptions="Center"
+                                       HeightRequest="40"
+                                       WidthRequest="40">
+                                    <Image.Source>
+                                        <Binding Path="Photo">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>
+                                                    nophoto_icon.png
+                                                </ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+
+                                <StackLayout Grid.Column="1"
+                                             VerticalOptions="Center"
+                                             Margin="15, 0">
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding AverageText}"/>
+                                </StackLayout>
+
+                                <Image Source="next_icon.png"
+                                       VerticalOptions="Center"
+                                       Grid.Column="2"
+                                       WidthRequest="30"
+                                       HeightRequest="30"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

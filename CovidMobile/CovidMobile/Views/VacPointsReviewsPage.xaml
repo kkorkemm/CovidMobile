@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.VacPointsReviewsPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="{Binding Name}"
+                   Margin="10"
+                   FontAttributes="Bold"
+                   FontSize="24"/>
+
+            <ListView x:Name="ListReviews"
+                      HasUnevenRows="True"
+                      Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Rating}"
+                                       VerticalOptions="Center"
+                                       FontAttributes="Bold"
+                                       FontSize="36"
+                                       Margin="10"/>
+
+                                <StackLayout Grid.Column="1"
+                                             VerticalOptions="Center">
+                                    <Label Text="{Binding Patient}"
+                                           FontAttributes="Bold"/>
+                                    <Label Text="{Binding Text}"
+                                           FontSize="12"/>
+                                </StackLayout>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="BtnAddReview"
+                    Style="{StaticResource AquamarineButton}"
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Margin="20"
+                    Text="Оставить отзыв"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

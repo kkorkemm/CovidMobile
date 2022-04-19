@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="CovidMobile.UserControls.LogoNameControl"
+      HorizontalOptions="Center">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+
+    <Image Source="{AppThemeBinding Light='Logo_Light.png',
+                                    Dark=''}" 
+           Margin="20"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"/>
+
+    <Label x:Name="TextUserName"
+           FontAttributes="Bold"
+           VerticalOptions="Center"
+           TextTransform="None"
+           TextDecorations="None"
+           Grid.Column="1"
+           FontSize="25"
+           HorizontalOptions="Start"
+           Margin="-10, 0, 50, 0"/>
+
+</Grid>

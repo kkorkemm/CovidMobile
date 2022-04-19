@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.VacPointsInfoPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="{StaticResource Blue}"
+                   Opacity="0.5"
+                   CornerRadius="20"
+                   Margin="0, -30, 0, 0">
+
+                <Grid>
+
+                    <!-- затемненное изображение??? -->
+                    <Image Source="{Binding Photo}"
+                           Opacity="0.5"
+                           />
+
+                    <Label Text="{Binding Name}"
+                       FontAttributes="Bold"
+                       FontSize="30"
+                       HorizontalOptions="Start"
+                       HorizontalTextAlignment="Start"
+                       VerticalOptions="End"
+                       Margin="10"
+                           TextColor="White"/>
+
+                </Grid>
+
+            </Frame>
+
+
+            <StackLayout Grid.Row="1">
+
+                <StackLayout Margin="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Адрес: "/>
+                        <Label Text="{Binding Address}"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Режим работы: "/>
+                        <Label Text="{Binding WorkTime}"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Телефон: "/>
+                        <Label Text="{Binding Telephone, StringFormat='+ {0}'}"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <Frame BackgroundColor="#ECECEC"
+                       CornerRadius="10"
+                       x:Name="FrameReview"
+                       Padding="15"
+                       Margin="30, 0">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Rating}"
+                               FontSize="36"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+
+
+                        <StackLayout Grid.Column="1"
+                                     Margin="10"
+                                     VerticalOptions="Center">
+
+                            <Label Text="{Binding Patient}"
+                                   FontAttributes="Bold"
+                                   FontSize="14"/>
+
+                            <Label Text="{Binding Text}"
+                                   FontSize="12"/>
+                        </StackLayout>
+
+
+                        <Image Source="next_icon.png"
+                               WidthRequest="40"
+                               HeightRequest="40"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Grid.Column="2"/>
+
+                    </Grid>
+                </Frame>
+                
+            </StackLayout>
+
+            <Button x:Name="BtnAddReview"
+                    Text="Оставить отзыв"
+                    Style="{StaticResource AquamarineButton}"
+                    Grid.Row="2"
+                    Margin="30"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

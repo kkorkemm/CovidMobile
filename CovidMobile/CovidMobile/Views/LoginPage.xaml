@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CovidMobile.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="{AppThemeBinding Light='Logo_Light.png',
+                                            Dark=''}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="20"/>
+
+            <StackLayout Grid.Row="1"
+                         Spacing="15"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="350"
+                         Margin="45">
+                <Entry Placeholder="ИИН"
+                       x:Name="TextCode"/>
+                <Entry Placeholder="Телефон"
+                       x:Name="TextNumber"/>
+            </StackLayout>
+
+            <Button Grid.Row="2"
+                    Text="Войти"
+                    Style="{StaticResource AquamarineButton}"
+                    Clicked="Button_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Margin="45"
+                    WidthRequest="350"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

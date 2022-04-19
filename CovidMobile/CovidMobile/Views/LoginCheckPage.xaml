@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.LoginCheckPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="{AppThemeBinding Light='Logo_Light.png',
+                                            Dark=''}"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Margin="20"/>
+
+            <StackLayout Grid.Row="1"
+                         Spacing="15"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="350"
+                         Margin="45">
+                <Entry Placeholder="Код"
+                       x:Name="TextCode"/>
+                <Label Text="На Ваш номер был отправлен код"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Отправить код еще раз"
+                                  TextColor="Blue"
+                                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <Button Grid.Row="2"
+                    Text="Войти"
+                    Style="{StaticResource AquamarineButton}"
+                    Clicked="Button_Clicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Margin="45"
+                    WidthRequest="350"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
