@@ -42,8 +42,48 @@
 
                 <StackLayout>
                     <Label Text="Ваша оценка: "/>
-                    <StackLayout Orientation="Horizontal">
-
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center">
+                        <ImageButton x:Name="BtnFirstStar"
+                                     Source="star_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Margin="10"
+                                     Clicked="BtnFirstStar_Clicked"
+                                     BackgroundColor="Transparent"
+                                     BorderColor="Transparent"/>
+                        <ImageButton x:Name="BtnSecondStar"
+                                     Source="star_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Margin="10"
+                                     Clicked="BtnSecondStar_Clicked"
+                                     BackgroundColor="Transparent"
+                                     BorderColor="Transparent"/>
+                        <ImageButton x:Name="BtnThirdStar"
+                                     Source="star_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Margin="10"
+                                     Clicked="BtnThirdStar_Clicked"
+                                     BackgroundColor="Transparent"
+                                     BorderColor="Transparent"/>
+                        <ImageButton x:Name="BtnFourthStar"
+                                     Source="star_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Margin="10"
+                                     Clicked="BtnFourthStar_Clicked"
+                                     BackgroundColor="Transparent"
+                                     BorderColor="Transparent"/>
+                        <ImageButton x:Name="BtnFifthStar"
+                                     Source="star_icon.png"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Margin="10"
+                                     Clicked="BtnFifthStar_Clicked"
+                                     BackgroundColor="Transparent"
+                                     BorderColor="Transparent"/>
                     </StackLayout>
                 </StackLayout>
 
@@ -58,7 +98,8 @@
                     Style="{StaticResource AquamarineButton}"
                     HorizontalOptions="Center"
                     Margin="20"
-                    Grid.Row="2"/>
+                    Grid.Row="2"
+                    Clicked="BtnPostReview_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

@@ -53,7 +53,8 @@
                     Grid.Row="2"
                     HorizontalOptions="Center"
                     Margin="20"
-                    Text="Оставить отзыв"/>
+                    Text="Оставить отзыв"
+                    Clicked="BtnAddReview_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

@@ -110,7 +110,8 @@
                     Text="Оставить отзыв"
                     Style="{StaticResource AquamarineButton}"
                     Grid.Row="2"
-                    Margin="30"/>
+                    Margin="30"
+                    Clicked="BtnAddReview_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

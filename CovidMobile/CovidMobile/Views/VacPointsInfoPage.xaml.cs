@@ -52,5 +52,13 @@ namespace CovidMobile.Views
         {
             await Shell.Current.GoToAsync($"VacPointsReviewsPage?vacPointId={CurrentVacPoint.ID}");
         }
+
+        /// <summary>
+        /// Переход на страницу для оставления отзыва
+        /// </summary>
+        private async void BtnAddReview_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"VacPointsAddReviewPage?vacPointId={CurrentVacPoint.ID}");
+        }
     }
 }

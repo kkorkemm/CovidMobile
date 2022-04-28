@@ -106,7 +106,8 @@
                     Text="Заполнить анкету"
                     Margin="20"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"/>
+                    VerticalOptions="Center"
+                    Clicked="BtnQuestionnare_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.QuestionnarePage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label Text="Анкета для допуска к вакцинации"
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="10, 20"/>
+
+            <Grid Grid.Row="1"
+                  Margin="20, 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Были ли Вы в последние 14 дней в регионах с зарегистрированным Covid 19?"
+                       VerticalOptions="Center"/>
+                <Label Text="Контактировали ли Вы в последние 14 дней с лицами, побывавших в регионах с зарегистрированным Covid 19?"
+                       Grid.Row="1"
+                       VerticalOptions="Center"/>
+                <Label Text="Контактировали ли Вы в последние 14 дней с лицами с ОРВИ, пневмонией или Covid-19?"
+                       Grid.Row="2"
+                       VerticalOptions="Center"/>
+                <Label Text="Вы работаете с больнице, домах престарелых или медицинских учреждениях?"
+                       Grid.Row="3"
+                       VerticalOptions="Center"/>
+                <Label Text="Имеются ли у Вас заболевания почек, печени, легких, диабет, СПИД, сердечно-сосудистые заболевания?"
+                       Grid.Row="4"
+                       VerticalOptions="Center"/>
+                <Label Text="Болели ли Вы ранее Covid-19?"
+                       Grid.Row="5"
+                       VerticalOptions="Center"/>
+                <Label Text="Имеются ли у Вас признаки ОРВИ сейчас или последние 14 дней?"
+                       Grid.Row="6"
+                       VerticalOptions="Center"/>
+
+                <CheckBox Grid.Row="0" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsBeenInPlaces}"/>
+                <CheckBox Grid.Row="1" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsBeenContactedInPlaces}"/>
+                <CheckBox Grid.Row="2" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsBeenContacted}"/>
+                <CheckBox Grid.Row="3" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsWorking}"/>
+                <CheckBox Grid.Row="4" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsSick}"/>
+                <CheckBox Grid.Row="5" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsCovidBefore}"/>
+                <CheckBox Grid.Row="6" Grid.Column="1"
+                          VerticalOptions="Center"
+                          Margin="10"
+                          IsChecked="{Binding IsSickNow}"/>
+
+            </Grid>
+
+            <Button x:Name="BtnPost"
+                    Text="Сохранить изменения"
+                    Style="{StaticResource AquamarineButton}"
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    Margin="0, 20"
+                    Clicked="BtnPost_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

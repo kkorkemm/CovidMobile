@@ -30,5 +30,10 @@ namespace CovidMobile.Views
                 BtnExit.IsEnabled = true;
             }
         }
+
+        private async void BtnQuestion_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("QuestionnarePage");
+        }
     }
 }

@@ -24,7 +24,8 @@
 
                 <Button x:Name="BtnQuestion"
                         Text="Заполнить анкету"
-                        Style="{StaticResource AquamarineButton}"/>
+                        Style="{StaticResource AquamarineButton}"
+                        Clicked="BtnQuestion_Clicked"/>
 
                 <Button x:Name="BtnTheme"
                         Text="Тема: светлая"

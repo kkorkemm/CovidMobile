@@ -79,8 +79,6 @@ namespace CovidMobile.Views
         /// <summary>
         /// Переход на страницы с информацией о записях на вакцину
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             var appointment = (sender as Frame).BindingContext as Appointments;
@@ -93,6 +91,14 @@ namespace CovidMobile.Views
             {
                 await Shell.Current.GoToAsync($"ComponentPage?appointmentID={appointment.ID}");
             }
+        }
+
+        /// <summary>
+        /// Переход на страницу заполнения анкеты
+        /// </summary>
+        private async void BtnQuestionnare_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("QuestionnarePage");
         }
     }
 }

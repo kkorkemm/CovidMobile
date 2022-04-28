@@ -6,6 +6,7 @@ namespace CovidMobile.Services
 {
     using Models;
     using Newtonsoft.Json;
+    using System.Linq;
     using System.Net;
 
     public class AppData
@@ -114,6 +115,19 @@ namespace CovidMobile.Services
             string address = CheckDevice();
             var doctors = client.DownloadString($"{address}Doctors");
             return JsonConvert.DeserializeObject<List<Doctor>>(doctors);
+        }
+
+        /// <summary>
+        /// Получение анкеты пациента
+        /// </summary>
+        /// <returns> Список докторов </returns>
+        public static Questionnare GetQuestionnare(int PatientID)
+        {
+            var client = new WebClient();
+            string address = CheckDevice();
+            var questionnares = client.DownloadString($"{address}Questionnnares");
+            List<Questionnare> all = JsonConvert.DeserializeObject<List<Questionnare>>(questionnares);
+            return all.Where(p =>p.PatientID == PatientID).FirstOrDefault();
         }
     }
 }

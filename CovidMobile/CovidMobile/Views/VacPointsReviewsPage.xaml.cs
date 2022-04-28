@@ -45,5 +45,13 @@ namespace CovidMobile.Views
 
             ListReviews.ItemsSource = reviewList;
         }
+
+        /// <summary>
+        /// Переход на страницу для оставления отзыва
+        /// </summary>
+        private async void BtnAddReview_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync($"VacPointsAddReviewPage?vacPointId={CurrentVacPoint.ID}");
+        }
     }
 }
