@@ -45,7 +45,8 @@
                     Text="Запись на вакцинацию"
                     Style="{StaticResource AquamarineButton}"
                     Margin="30"
-                    Grid.Row="1"/>
+                    Grid.Row="1"
+                    Clicked="BtnCreateAppointment_Clicked"/>
 
         </Grid>
     </ContentPage.Content>

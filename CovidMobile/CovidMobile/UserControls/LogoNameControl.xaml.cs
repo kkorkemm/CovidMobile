@@ -17,7 +17,10 @@ namespace CovidMobile.UserControls
         public LogoNameControl()
         {
             InitializeComponent();
+        }
 
+        protected override void OnParentSet()
+        {
             if (AppData.CurrentPatient != null)
             {
                 TextUserName.Text = AppData.CurrentPatient.FullName;

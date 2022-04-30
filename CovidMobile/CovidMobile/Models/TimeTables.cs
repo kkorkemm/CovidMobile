@@ -11,6 +11,8 @@ namespace CovidMobile.Models
         public string Time { get; set; }
         public string VaccinationPoint { get; set; }
         public string DoctorName { get; set; }
-      
+        public int PatientCount { get; set; }
+
+        public string BackColor => PatientCount == 5 ? "#BEBEBE" : "#68D172";
     }
 }

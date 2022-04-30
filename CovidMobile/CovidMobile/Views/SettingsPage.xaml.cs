@@ -17,6 +17,10 @@ namespace CovidMobile.Views
         public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
             BindingContext = new SettingsViewModel();
 
             if (AppData.CurrentPatient == null)
@@ -29,6 +33,7 @@ namespace CovidMobile.Views
                 BtnQuestion.IsEnabled = true;
                 BtnExit.IsEnabled = true;
             }
+
         }
 
         private async void BtnQuestion_Clicked(object sender, EventArgs e)

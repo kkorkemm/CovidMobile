@@ -40,5 +40,10 @@ namespace CovidMobile.Views
         {
             TextComponent.Text = ComponentTypeName;
         }
+
+        private async void BtnCreateAppointment_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("TimeTablePage");
+        }
     }
 }

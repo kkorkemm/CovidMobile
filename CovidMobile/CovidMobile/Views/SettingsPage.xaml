@@ -15,7 +15,8 @@
             <!-- logo and user's name -->
             <control:LogoNameControl
                 VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                x:Name="ControlLogo"/>
 
             <StackLayout Grid.Row="1"
                          VerticalOptions="Center"
