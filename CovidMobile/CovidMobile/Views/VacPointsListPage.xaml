@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CovidMobile.Views.VacPointsListPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -13,7 +14,8 @@
             <Entry Placeholder="Введите название или адрес пункта"
                    x:Name="TextSearch"
                    Margin="20"
-                   TextChanged="TextSearch_TextChanged"/>
+                   TextChanged="TextSearch_TextChanged"
+                   PlaceholderColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"/>
 
             <ListView Grid.Row="1"
                       x:Name="ListVacPoints"

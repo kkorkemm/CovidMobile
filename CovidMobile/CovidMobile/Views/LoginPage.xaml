@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="CovidMobile.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}">
     <ContentPage.Content>
         <Grid>
 
@@ -16,7 +17,7 @@
             </Grid.RowDefinitions>
 
             <Image Source="{AppThemeBinding Light='Logo_Light.png',
-                                            Dark=''}"
+                                            Dark='Logo_Dark.png'}"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    Margin="20"/>
@@ -28,9 +29,13 @@
                          WidthRequest="350"
                          Margin="45">
                 <Entry Placeholder="ИИН"
-                       x:Name="TextCode"/>
+                       x:Name="TextCode"
+                       TextColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"
+                       PlaceholderColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"/>
                 <Entry Placeholder="Телефон"
-                       x:Name="TextNumber"/>
+                       x:Name="TextNumber"
+                       TextColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"
+                       PlaceholderColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"/>
             </StackLayout>
 
             <Button Grid.Row="2"

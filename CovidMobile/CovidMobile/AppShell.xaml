@@ -14,7 +14,7 @@
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.TabBarBackgroundColor" Value="#F9F9F9" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light=#F9F9F9, Dark=#666666}" />
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />

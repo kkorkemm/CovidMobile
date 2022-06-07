@@ -13,8 +13,24 @@ namespace CovidMobile.Views
     using Models;
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    [QueryProperty(nameof(ComponentID), "componentID")]
     public partial class TimeTablePage : ContentPage
     {
+        private int CurrentComponentID { get; set; }
+
+        private void LoadComponentID(int componentID)
+        {
+            CurrentComponentID = componentID;
+        }
+
+        public int ComponentID
+        {
+            set
+            {
+                LoadComponentID(value);
+            }
+        }
+
         private List<TimeTables> TimeTables { get; set; }
 
         public TimeTablePage()
@@ -27,8 +43,13 @@ namespace CovidMobile.Views
 
             var vacPoints = AppData.GetVaccinationPoints().Where(p => p.UserRoleID != 1).ToList();
             PickerVacPoints.ItemsSource = vacPoints;
+
         }
 
+        /// <summary>
+        /// Перед выбором даты нужно выбрать пункт вакцинации
+        /// </summary>
+        /// <returns> Выбран ли пункт вакцинации </returns>
         private bool CheckList()
         {
             if (TimeTables == null)
@@ -42,9 +63,12 @@ namespace CovidMobile.Views
             }
         }
 
+        /// <summary>
+        /// Обновить расписание при выборе даты или пункта
+        /// </summary>
         private void UpdateList()
         {
-            var timeTableForDay = TimeTables.Where(p => p.Date == DateDate.Date).ToList();
+            var timeTableForDay = TimeTables.Where(p => p.Date == DateDate.Date && (p.ComponentID == CurrentComponentID || p.ComponentID == 0)).ToList();
             if (timeTableForDay.Count() == 0)
             {
                 ListTimeTable.IsVisible = false;
@@ -59,6 +83,9 @@ namespace CovidMobile.Views
             }
         }
 
+        /// <summary>
+        /// Следующая дата
+        /// </summary>
         private void BtnNextDate_Clicked(object sender, EventArgs e)
         {
             if (CheckList() == true)
@@ -68,6 +95,9 @@ namespace CovidMobile.Views
             }
         }
 
+        /// <summary>
+        /// Предыдущая дата
+        /// </summary>
         private void BtnPreviousDate_Clicked(object sender, EventArgs e)
         {
             if (CheckList() == true)
@@ -77,6 +107,9 @@ namespace CovidMobile.Views
             }
         }
 
+        /// <summary>
+        /// При выборе даты
+        /// </summary>
         private void DateDate_DateSelected(object sender, DateChangedEventArgs e)
         {
             CheckList();
@@ -89,12 +122,25 @@ namespace CovidMobile.Views
             UpdateList();
         }
 
+        /// <summary>
+        /// При выборе пункта вакцинации
+        /// </summary>
         private void PickerVacPoints_SelectedIndexChanged(object sender, EventArgs e)
         {
             var point = PickerVacPoints.SelectedItem as VaccinationPoints;
             TimeTables = AppData.GetTimeTables().Where(p => p.VaccinationPoint == point.Name).ToList();
 
             UpdateList();
+        }
+
+        /// <summary>
+        /// При выборе времени приема
+        /// </summary>
+        private async void ListTimeTable_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var timeTable = e.SelectedItem as TimeTables;
+
+            await Shell.Current.GoToAsync($"AppointmentPermissionPage?timeTableID={timeTable.ID}&componentID={CurrentComponentID}");
         }
     }
 }

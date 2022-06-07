@@ -23,6 +23,7 @@ namespace CovidMobile
             Routing.RegisterRoute("VacPointsAddReviewPage", typeof(VacPointsAddReviewPage));
             Routing.RegisterRoute("QuestionnarePage", typeof(QuestionnarePage));
             Routing.RegisterRoute("TimeTablePage", typeof(TimeTablePage));
+            Routing.RegisterRoute("AppointmentPermissionPage", typeof(AppointmentPermissionPage));
         }
 
     }

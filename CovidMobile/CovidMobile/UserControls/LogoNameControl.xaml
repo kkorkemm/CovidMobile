@@ -10,7 +10,7 @@
     </Grid.ColumnDefinitions>
 
     <Image Source="{AppThemeBinding Light='Logo_Light.png',
-                                    Dark=''}" 
+                                    Dark='Logo_Dark.png'}" 
            Margin="20"
            VerticalOptions="Center"
            HorizontalOptions="Center"/>
@@ -23,6 +23,8 @@
            Grid.Column="1"
            FontSize="25"
            HorizontalOptions="Start"
-           Margin="-10, 0, 50, 0"/>
+           Margin="-10, 0, 50, 0"
+           TextColor="{AppThemeBinding Light={StaticResource LightText},
+                                       Dark={StaticResource DarkText}}"/>
 
 </Grid>

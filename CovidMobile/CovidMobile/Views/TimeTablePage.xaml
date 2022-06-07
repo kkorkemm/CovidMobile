@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CovidMobile.Views.TimeTablePage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -41,7 +42,8 @@
                             HorizontalOptions="Center"
                             Format="dd.MM.yyyy"
                             VerticalOptions="Center"
-                            DateSelected="DateDate_DateSelected"/>
+                            DateSelected="DateDate_DateSelected"
+                            TextColor="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"/>
 
                 <ImageButton Source="next_icon.png"
                              WidthRequest="20"
@@ -61,7 +63,7 @@
                       SeparatorVisibility="None"
                       SeparatorColor="Transparent"
                       BackgroundColor="Transparent"
-                      SelectionMode="None">
+                      ItemSelected="ListTimeTable_ItemSelected">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -74,7 +76,7 @@
                                 <StackLayout>
                                     <Label Text="{Binding Time}"
                                            TextColor="White"/>
-                                    <Label Text="{Binding PatientCount}"
+                                    <Label Text="{Binding PatientCount, StringFormat='{0} человек записалось'}"
                                            TextColor="white"
                                            FontAttributes="Bold"/>
                                 </StackLayout>

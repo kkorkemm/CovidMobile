@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CovidMobile.Views.VacPointsInfoPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -78,7 +79,8 @@
                                FontSize="36"
                                FontAttributes="Bold"
                                VerticalOptions="Center"
-                               HorizontalOptions="Center"/>
+                               HorizontalOptions="Center"
+                               TextColor="#4A4A4A"/>
 
 
                         <StackLayout Grid.Column="1"
@@ -87,10 +89,12 @@
 
                             <Label Text="{Binding Patient}"
                                    FontAttributes="Bold"
-                                   FontSize="14"/>
+                                   FontSize="14"
+                                   TextColor="#4A4A4A"/>
 
                             <Label Text="{Binding Text}"
-                                   FontSize="12"/>
+                                   FontSize="12"
+                                   TextColor="#4A4A4A"/>
                         </StackLayout>
 
 

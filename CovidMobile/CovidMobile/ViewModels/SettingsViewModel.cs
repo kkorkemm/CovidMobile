@@ -45,14 +45,7 @@ namespace CovidMobile.ViewModels
         /// </summary>
         private void OnThemeChange()
         {
-            if (Application.Current.UserAppTheme == OSAppTheme.Light)
-            {
-                Application.Current.UserAppTheme = OSAppTheme.Dark;
-            }
-            else
-            {
-                Application.Current.UserAppTheme = OSAppTheme.Light;
-            }
+
         }
 
         /// <summary>

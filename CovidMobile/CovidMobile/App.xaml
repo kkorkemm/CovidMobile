@@ -74,6 +74,14 @@
             </Style>
 
 
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightText}, Dark={StaticResource DarkText}}"/>
+            </Style>
+
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}"/>
+            </Style>
+            
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

@@ -47,16 +47,16 @@ namespace CovidMobile.Views
             BindingContext = CurrentAppointment;
 
             // если компонент получен, видна кнопка для получения справки, иначе - кнопка для редактирования
-            if (CurrentAppointment.IsReceived == true)
-            {
-                BtnGetPDF.IsVisible = true;
-                BtnEdit.IsVisible = false;
-            }
-            else
-            {
-                BtnGetPDF.IsVisible = false;
-                BtnEdit.IsVisible = true;
-            }
+            //if (CurrentAppointment.IsReceived == true)
+            //{
+            //    BtnGetPDF.IsVisible = true;
+            //    BtnEdit.IsVisible = false;
+            //}
+            //else
+            //{
+            //    BtnGetPDF.IsVisible = false;
+            //    BtnEdit.IsVisible = true;
+            //}
         }
 
         /// <summary>

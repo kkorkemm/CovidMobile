@@ -17,8 +17,11 @@ namespace CovidMobile.Views
     {
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();    
+        }
 
+        protected override void OnAppearing()
+        {
             // записи на вакцину
             var userAppointments = AppData.GetAppointments().Where(p => p.PatientID == AppData.CurrentPatient.ID).ToList();
 
@@ -61,7 +64,7 @@ namespace CovidMobile.Views
                     ForeColor = "#939393",
                     ComponentType = "II компонент"
                 };
-                SecondFrame.BindingContext = newSecond; 
+                SecondFrame.BindingContext = newSecond;
                 NextIconSecond.Source = "next_icon.png";
             }
 

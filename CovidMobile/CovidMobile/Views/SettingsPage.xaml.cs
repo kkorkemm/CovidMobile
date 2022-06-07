@@ -40,5 +40,19 @@ namespace CovidMobile.Views
         {
             await Shell.Current.GoToAsync("QuestionnarePage");
         }
+
+        private void BtnTheme_Clicked(object sender, EventArgs e)
+        {
+            if (Application.Current.UserAppTheme == OSAppTheme.Light)
+            {
+                Application.Current.UserAppTheme = OSAppTheme.Dark;
+                BtnTheme.Text = "Тема: темная";
+            }
+            else
+            {
+                Application.Current.UserAppTheme = OSAppTheme.Light;
+                BtnTheme.Text = "Тема: светлая";
+            }
+        }
     }
 }

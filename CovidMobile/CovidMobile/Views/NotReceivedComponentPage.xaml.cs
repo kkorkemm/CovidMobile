@@ -17,6 +17,7 @@ namespace CovidMobile.Views
     public partial class NotReceivedComponentPage : ContentPage
     {
         private string ComponentTypeName { get; set; }
+        private int ComponentID { get; set; }
 
         private void ComponentTypeLoad(string componentName)
         {
@@ -39,11 +40,12 @@ namespace CovidMobile.Views
         protected override void OnAppearing()
         {
             TextComponent.Text = ComponentTypeName;
+            ComponentID = ComponentTypeName == "I компонент" ? 1 : 2;
         }
 
         private async void BtnCreateAppointment_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("TimeTablePage");
+            await Shell.Current.GoToAsync($"TimeTablePage?componentID={ComponentID}");
         }
     }
 }

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CovidMobile.Views.AppointmentPermissionPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackgroud}, Dark={StaticResource DarkBackground}}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnQuestionnare"
+                    Text="Заполнить анкету"
+                    Style="{StaticResource BabyBlueButton}"
+                    Margin="10"
+                    HorizontalOptions="Center"
+                    Clicked="BtnQuestionnare_Clicked"/>
+
+            <Label Text="Согласие на добровольную вакцинацию"
+                   Grid.Row="1"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+
+            <ScrollView Grid.Row="2">
+                <StackLayout Margin="20">
+
+                    <Label FontSize="16"
+                           Text="Я прочитал(а) (или мне зачитали) и понял(а) содержание предварительного пакета документации по поводу иммунизации, включая следующие документы:"/>
+                    <Label FontSize="16"
+                           Text="«Информационный лист о вакцине от COVID-19» и «Что следует знать о назначении вакцины от COVID-19»."/>
+                    <Label FontSize="16"
+                           Text="У меня была возможность задать вопросы по поводу вакцины, которую я получаю, и я получил(а) на них удовлетворительные ответы."/>
+                    <Label FontSize="16"
+                           Text="Я даю согласие на введение вакцины, включая все рекомендуемые дозы в серии."/>
+                    <Label FontSize="16"
+                           Text="Я понимаю, что могу отозвать данное согласие в любое время."/>
+                    <Label FontSize="16"
+                           Text="Я понимаю, что в случае отзыва с моей стороны согласия в качестве лица, принимающего решение в отношении другого лица, мне следует связаться с учреждением, в котором проживает такое лицо. "/>
+                </StackLayout>
+               
+            </ScrollView>
+
+            <StackLayout Grid.Row="3"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <CheckBox x:Name="CheckAgree"
+                       Margin="5"
+                          VerticalOptions="Center"/>
+                <Label Text="Я подтверждаю свое согласие"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+
+            <Button x:Name="BtnAgree"
+                    Style="{StaticResource AquamarineButton}"
+                    Text="Записаться"
+                    Margin="15"
+                    Grid.Row="4"
+                    Clicked="BtnAgree_Clicked"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
